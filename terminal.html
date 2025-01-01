@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+    <header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 bg-black border-b border-green-500">
+        <div class="text-2xl text-green-400">
+            <a href="index.html" class="hover:text-green-300">⬅ Back</a>
+        </div>
+    </header>
+
+    <main id="terminal" tabindex="0">
+        <div id="output">
+            <p>Enter <strong>pwd_crack</strong> to start the password cracking process, or <strong>exit</strong> to return to the homepage.</p>
+        </div>
+        <div class="input-line">
+            <span class="prompt">></span>
+            <span id="current-input"></span>
+            <span class="blinking-cursor"></span>
+        </div>
+    </main>
+
+    <script src="terminal.js"></script>
+</body>
+</html>

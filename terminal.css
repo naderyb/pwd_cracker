@@ -1,0 +1,93 @@
+body {
+    background-color: black;
+    color: rgb(0, 255, 0);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+#terminal {
+    width: 90%;
+    max-width: 800px;
+    height: 90%;
+    max-height: 600px;
+    background: #111;
+    border: 2px solid green;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-y: auto;
+    box-shadow: 0 0 15px green;
+}
+
+#output {
+    word-wrap: break-word;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    margin-right: 0.5rem;
+}
+
+.blinking-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background-color: green;
+    animation: blink 1s steps(1, start) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.password {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    font-size: large;
+    font-family: monospace;
+}
+
+.password-row {
+    margin-bottom: 10px;
+}
+
+/* progress Bar Styles */
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+/* timer Styles */
+.timer {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* loading Message */
+.loading-message {
+    color: yellow;
+    font-style: italic;
+    margin-top: 20px;
+}

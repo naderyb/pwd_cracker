@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>crack pwd</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body class="bg-black text-white font-mono">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 border-b border-green-500 bg-black">
+    <div class="text-2xl glitch" data-text="HACKER ZONE">
+      <span>CRACK</span> <span>PWD</span>
+    </div>
+    <nav>
+      <a href="#hero" class="text-cyan-400 hover:text-green-300 mx-4">Home</a>
+      <a href="#a-propos" class="text-cyan-400 hover:text-green-300 mx-4">A propos</a>
+      <a href="#how" class="text-cyan-400 hover:text-green-300 mx-4">Comment ça marche?</a>
+      <button id="terminal-btn" class="bg-green-500 hover:bg-green-400 text-black px-4 py-2 rounded shadow-lg">
+        Terminal
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="flex flex-col items-center justify-center min-h-screen text-center">
+    <h1 class="text-5xl md:text-7xl text-green-300 font-bold glitch" data-text="💻 Crack The Password">
+      💻 Crack The password
+    </h1>
+    <p class="mt-6 text-lg md:text-2xl text-cyan-500 animate-typing">
+      Un mot de passe à découvrir, une condition à respecter...
+    </p>
+    <button id="commencer-btn" class="mt-10 bg-red-500 hover:bg-red-400 text-white text-lg font-bold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105">
+      Commencer
+    </button>
+  </section>
+
+  <br><br>
+
+  <!-- À Propos Section -->
+  <section id="a-propos" class="px-6 py-12 bg-gray-900 text-center">
+    <h2 class="text-4xl text-green-300 font-bold mb-4">À Propos</h2>
+    <hr class="border-t-2 border-green-300 my-6 w-1/6 mx-auto">
+    <p class="text-lg text-cyan-400">
+      Un hacker veut identifier le mot de passe (Passe Word) d'un compte utilisateur. Pour cela, il veut proposer un
+      algorithme qui trouve la solution dans un temps raisonnable. <br><br>
+      Il est sûr que le mot de passe se compose de N positions, et chaque position peut contenir uniquement les chiffres
+      de 0, 1, 2,…9. Il affirme aussi que la somme des chiffres de ce mot de passe est égale à un entier K. <br><br>
+      Construire la solution qui permet de trouver le mot de passe (sans utilisation de tableaux et des listes chaînées).
+    </p>
+  </section>
+
+  <br><br>
+
+<!-- How It Works Section -->
+<section id="how" class="px-6 py-12 bg-gray-800 text-center">
+  <h2 class="text-4xl text-green-300 font-bold mb-4">Comment ça marche ?</h2>
+  <hr class="border-t-2 border-green-300 my-6 w-1/6 mx-auto">
+  <p class="text-lg text-cyan-400">
+    Le problème peut être modélisé comme un <strong>graphe orienté</strong> où :
+    Chaque combinaison possible des chiffres du mot de passe peut être représentée comme un <strong>sommet</strong> dans un graphe, et les contraintes, telles que la somme des chiffres égale à K, définissent les <strong>arêtes</strong> entre ces sommets.
+  </p>
+  <ul class="text-cyan-400 mt-4 list-disc pl-6">
+    <u><strong>Représentation des sommets</strong></u>: Chaque sommet est défini comme une paire (i, S), où i est la position dans le mot de passe et S est la somme cumulative des chiffres choisis jusqu'à cette position.</li>
+    <br>
+    <u><strong>Construction des arêtes</strong></u>: Une arête existe entre un sommet (i, S) et un autre (i+1, S+c), où c est un chiffre entre 0 et 9.</li>
+    <br>
+    <u><strong>Condition de validité</strong></u>: Le graphe doit respecter la contrainte S = K lorsque i = N, et les sommets où S > K sont invalides.</li>
+    <br>
+    <u><strong>Parcours du graphe</strong></u>: Une recherche en profondeur (DFS) ou en largeur (BFS) est utilisée pour explorer le graphe et trouver les solutions valides.</li>
+    <br>
+    <u><strong>Optimisation</strong></u>: Seuls les chemins pertinents sont explorés, ce qui évite d'explorer toutes les combinaisons possibles.</li>
+  </ul>
+  <p class="text-lg text-cyan-400 mt-4">
+    Cette approche permet de résoudre efficacement le problème tout en respectant les contraintes données par la somme des chiffres et la taille du mot de passe.
+  </p>
+</section>
+
+  <br><br>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-gray-900 text-cyan-400">
+    <p>&copy; 2024 Crack the password. All rights reserved.</p>
+    <p class="text-cyan-400 opacity-50 hover:opacity-100 transition-opacity duration-300">Créé par Youb Mahmoud Nader</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

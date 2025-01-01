@@ -1,0 +1,39 @@
+/* typewriter Effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 45%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #0f0; }
+}
+
+.animate-typing {
+    overflow: hidden;
+    border-right: 2px solid #0f0;
+    white-space: nowrap;
+    width: 100%;
+    animation: typing 4s steps(40, end) 0.1s forwards, blink 0.7s step-end infinite 1s;
+}
+
+/* Glitch effect */
+.glitch span:first-child {
+    color: #0f0;
+}
+
+.glitch span:last-child {
+    color: #0ff;
+}  
+
+#terminal-output {
+    font-family: 'Monospace', sans-serif;
+    font-size: 1rem;
+    background-color: #1a1a1a;
+    color: #00f;
+    padding: 10px;
+    border-radius: 5px;
+    height: 200px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
