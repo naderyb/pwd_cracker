@@ -22,7 +22,7 @@ Avant de lancer le projet, tu dois avoir les éléments suivants installés :
 
 1. Clone ce dépôt sur ta machine locale :
    ```bash
-   git clone https://github.com/naderyb/password_cracker
+   git clone https://github.com/naderyb/pwd_cracker
    cd password_cracker
    ```
 
