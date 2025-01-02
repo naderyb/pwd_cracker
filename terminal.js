@@ -151,7 +151,7 @@ document.addEventListener('keydown', async (event) => {
     //function to update the timer during the cracking process
     function updateTimer() {
         const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
-        timerDisplay.textContent = `Time elapsed: ${elapsedTime} seconds`;
+        timerDisplay.textContent = `Time elapsed: ${elapsedTime} ms`;
     }
 
     //function to generate passwords based on N (length) and K (sum of digits)
