@@ -3,9 +3,9 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app)  # Allow everyone to access the API
+CORS(app)  #activer CORS pour permettre les requêtes de n'importe quel domaine
 
-# Function to find password combinations
+#fonction pour trouver les combinaisons de mots de passe possibles
 def find_password_combinations(n, k):
     results = []
 
@@ -25,34 +25,33 @@ def find_password_combinations(n, k):
     backtrack([], 0)
     return results
 
-# Route for the homepage
+#path pour la page d'accueil
 @app.route('/')
 def home():
-    return render_template('index.html')  # Make sure index.html is in the templates folder
+    return render_template('index.html')
 
-# API route to crack the password
+#API path pour la page d'accueil
 @app.route('/crack', methods=['POST'])
 def crack_password():
     data = request.json
     n = data.get('n')
     k = data.get('k')
 
-    # Input validation
+    #validation de l'input
     if n is None or k is None:
         return jsonify({"message": "Invalid input: N and K are required."}), 400
     
     if not isinstance(n, int) or not isinstance(k, int):
         return jsonify({"message": "N and K must be integers."}), 400
 
-    # Find the possible password combinations
+    #trouver les combinaisons de mots de passe possibles
     passwords = find_password_combinations(n, k)
 
     if not passwords:
         return jsonify({"message": "No valid password combinations found."}), 404
     
-    # Return the first 5 password combinations
     return jsonify({"message": f"Found {len(passwords)} possible combinations.", "passwords": passwords[:5]})
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # Use the PORT environment variable if available
+    port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
