@@ -97,6 +97,6 @@ curl -X POST http://127.0.0.1:5000/crack -H "Content-Type: application/json" -d 
 ---
 
 <p align="center">
-  &copy; 2024 crack pwd. Tous droits réservés. <br>
+  &copy; 2024 pwd cracker. Tous droits réservés. <br>
   Développé par YOUB Mahmoud Nader(https://github.com/naderyb)
 </p>
